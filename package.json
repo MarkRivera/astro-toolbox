@@ -12,6 +12,7 @@
     "lint:eslint": "eslint \"src/**/*.{css,js}\""
   },
   "devDependencies": {
+    "@types/node": "^14.18.36",
     "astro": "^1.0.0",
     "eslint": "^8.18.0",
     "prettier": "^2.7.1",
