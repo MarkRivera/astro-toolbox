@@ -1,0 +1,27 @@
+---
+export interface Props {
+  url: string;
+}
+
+const { url = '/' } = Astro.props as Props;
+---
+
+<a href={url} class="mx-4 md:mx-0">
+  <slot />
+</a>
+
+<style>
+  a:first-child {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  a:not(:first-child) {
+    margin-right: 1rem;
+    text-align: center;
+  }
+
+  a:last-child {
+    margin-right: 0;
+  }
+</style>

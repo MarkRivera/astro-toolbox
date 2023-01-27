@@ -1,0 +1,100 @@
+---
+import { Icon } from 'astro-icon';
+import SocialLink from './SocialLink.astro';
+---
+
+<div class="nav-wrapper flex">
+  <div
+    class="bg-purple-800 w-12 h-12 rounded-full flex justify-center items-center menu-toggle ml-1 mt-1 z-50 md:hidden"
+  >
+    M
+  </div>
+
+  <nav
+    class="w-full flex flex-col md:flex-row px-4 py-0 md:px-0 md:pl-4 md:py-0 md:justify-between md:mt-4 overflow-hidden main-nav bg-black pt-12"
+  >
+    <div
+      class="nav-links flex flex-col md:flex-row text-5xl items-center md:text-base"
+    >
+      <a href="/album">Album</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/discography">Discography</a>
+      <a href="/videos">Videos</a>
+    </div>
+
+    <h1 class="hidden lg:block mb-4 md:block md:mb-0 text-4xl font-bold">
+      Merch
+    </h1>
+
+    <div class="social-links flex items-center justify-center pr-4">
+      <SocialLink url="https://instagram.com/mikemerch">
+        <Icon pack="fa" name="instagram" />
+      </SocialLink>
+
+      <SocialLink url="https://twitter.com/mikemerch">
+        <Icon pack="fa" name="twitter" />
+      </SocialLink>
+
+      <SocialLink url="https://facebook.com/mikemerch">
+        <Icon pack="cib" name="tiktok" />
+      </SocialLink>
+
+      <SocialLink url="https://facebook.com/mikemerch">
+        <Icon pack="fa" name="music" />
+      </SocialLink>
+
+      <SocialLink url="">
+        <Icon pack="fa" name="spotify" />
+      </SocialLink>
+    </div>
+  </nav>
+</div>
+
+<style>
+  [astro-icon] {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .main-nav {
+    height: 0;
+    transition: height 0.5s ease;
+    position: fixed;
+  }
+
+  .open-nav {
+    height: 100vh;
+  }
+
+  .nav-links a {
+    margin-bottom: 2rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  @media (min-width: 768px) {
+    [astro-icon] {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .main-nav {
+      height: 2.5rem;
+      position: absolute;
+      background-color: transparent;
+      transition: none;
+    }
+
+    .nav-links a {
+      margin-bottom: 0;
+    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+
+  menuToggle.addEventListener('click', () => {
+    document.querySelector('.main-nav').classList.toggle('open-nav');
+  });
+</script>
