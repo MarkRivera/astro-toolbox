@@ -1,0 +1,32 @@
+---
+const concertData = [
+  {
+    date: 'Tues, Oct 25th',
+    eventName: 'Album Release Party',
+    location: 'Downtown, LA',
+    time: '8pm',
+  },
+  {
+    date: 'Fri, Oct 28th',
+    eventName: 'Sofar Sounds LA',
+    location: 'Santa Monica, CA',
+    time: '7pm',
+  },
+];
+---
+
+<!-- For each event within concert data create a card -->
+<section class="flex flex-col my-16 md:my-64">
+  {
+    concertData.map((event) => {
+      return (
+        <div class="mb-8 mx-4 py-16">
+          <h3>{event.date}</h3>
+          <h2 class="font-semibold text-4xl mb-2">{event.eventName}</h2>
+          <h4>{event.location}</h4>
+          <h4>{event.time}</h4>
+        </div>
+      );
+    })
+  }
+</section>
