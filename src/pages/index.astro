@@ -3,24 +3,15 @@ import Layout from '../components/Layout.astro';
 import FeedbackForm from '../components/FeedbackForm.astro';
 import HeroHeader from '../components/HeroHeader.astro';
 import AlbumCard from '../components/AlbumCard.astro';
+import ConcertCard from '../components/ConcertCard.astro';
 ---
 
 <Layout title="Mike Merchant">
   <main>
     <HeroHeader />
     <AlbumCard />
+    <ConcertCard />
     <FeedbackForm />
-    <a class="jokes-link" href="/api/joke">
-      <h3>Click here for function-loaded jokes!</h3>
-    </a>
-    <footer class="footer">
-      Made with <a href="https://ntl.fyi/3P0dwBi"
-        ><img
-          src="https://res.cloudinary.com/dzkoxrsdj/image/upload/v1646714899/netliheart_ezlkim.svg"
-          alt="Netlify Logo"
-        /></a
-      > for you!
-    </footer>
   </main>
 </Layout>
 
